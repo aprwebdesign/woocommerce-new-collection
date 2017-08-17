@@ -78,22 +78,6 @@ update_post_meta( $post_id, 'product-title', $product_title );
  
 add_action( 'save_post', 'aprwoo_save_meta_box_data' );
  
-function aprwoo_display_product( $content ) {
- 
-if ( is_single () ){
- 
-$html = 'The Product Title is: ' . get_post_meta( get_the_ID(), 'product-title', true );
- 
-$content .= $html;
- 
-}
- 
-return $content;
- 
-}
- 
-add_action('the_content', 'aprwoo_display_product');
- 
 function aprwoo_user_can_save( $post_id, $nonce ) {
  
 $is_autosave = wp_is_post_autosave( $post_id );
